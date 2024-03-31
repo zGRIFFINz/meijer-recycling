@@ -5,6 +5,7 @@ import requests
 
 api_url_get = "https://www.boredapi.com/api/activity"
 api_url_post = "https://httpbin.org/anything"
+meijer_post = "https://capi.meijer.com/echo/resource"
 
 
 def api_get_request():
@@ -20,8 +21,17 @@ def api_get_request():
 def api_post_request():
     try:
         data_payload = {"dog": "motzi", "cat": "abby"}
-        #joke_json = joke_type.jsonlo
         response = requests.post(api_url_post, json=data_payload)
+    except:
+        print("Post request wrong format.")
+        exit(1)
+    return response
+
+
+def meijer_post_request():
+    try:
+        data_payload = {"dog": "motzi", "cat": "abby"}
+        response = requests.post(meijer_post, json=data_payload)
     except:
         print("Post request wrong format.")
         exit(1)
@@ -39,7 +49,8 @@ def evaluate(response):
 
 def main():
     #response = api_get_request()
-    response = api_post_request()
+    #response = api_post_request()
+    response = meijer_post_request()
     evaluate(response)
 
 
