@@ -11,9 +11,10 @@ headers = {
 
 # Provide upc code
 def upc_input():
-    #upc_code = input("Enter UPC code: ")
+    # upc_code = input("Enter UPC code: ")
     upc_code = "642860300267"
     return upc_code
+
 
 # Grab product name from url results
 def parse_web_data(upc_code):
